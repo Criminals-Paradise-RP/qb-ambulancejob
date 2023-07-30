@@ -1,10 +1,10 @@
 Config = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add setr UseTarget true)
-Config.MinimalDoctors = 2 -- How many players with the ambulance job to prevent the hospital check-in system from being used
+Config.MinimalDoctors = 2 -- How many players with the ambulance job to prevent the hospital check-in system from being used --TEST THIS
 Config.DocCooldown = 1 -- Cooldown between doctor calls allowed, in minutes
-Config.WipeInventoryOnRespawn = true -- Enable or disable removing all the players items when they respawn at the hospital
+Config.WipeInventoryOnRespawn = true -- Enable or disable removing all the players items when they respawn at the hospital --TEST THIS
 Config.Helicopter = "polmav" -- Helicopter model that players with the ambulance job can use
-Config.BillCost = 2000 -- Price that players are charged for using the hospital check-in system
+Config.BillCost = 3000 -- Price that players are charged for using the hospital check-in system
 Config.DeathTime = 300 -- How long the timer is for players to bleed out completely and respawn at the hospital
 Config.ReviveInterval = 360 -- How long the timer is for players to revive a player in laststand
 Config.MinimumRevive = 300 -- How long the timer is for players to revive a player in laststand
@@ -37,24 +37,55 @@ Config.AlertShowInfo = 2 -- How many injuries a player must have before being al
 
 Config.Locations = { -- Edit the various interaction points for players or create new ones
     ["checking"] = {
-	    [1] = vector3(308.19, -595.35, 43.29),
-	    [2] = vector3(-254.54, 6331.78, 32.43), -- paleto
+        [1] = vector3(309.09, -592.51, 43.28), -- PillboxTop
+        [2] = vector3(350.85, -588.11, 28.8), -- PillboxBotom
+	    [3] = vector3(-254.54, 6331.78, 32.43), -- Paleto
+        [4] = vector3(1674.81, 3666.17, 35.34), -- Sandy
+        [5] = vector3(1672.41, 3652.76, 35.34), -- Sandy
+        [6] = vector3(-436.16, -325.81, 34.91), -- Zonah
     },
     ["duty"] = {
-        [1] = vector3(311.18, -599.25, 43.29),
-        [2] = vector3(-254.88, 6324.5, 32.58),
+        [1] = vector3(310.63, -597.06, 43.28), -- Pillbox
+        [2] = vector3(-653.73, -87.68, 38.79), -- FireHQ
+        [3] = vector3(-255.66, 6330.44, 32.43), -- Paleto
+        [4] = vector3(1670.83, 3655.24, 35.34), -- Sandy
+        [5] = vector3(-432.23, -318.81, 34.91), -- Zonah
+        [6] = vector3(-385.35, 6104.51, 31.38), -- Paleto FD
+        [7] = vector3(1173.17, -1474.67, 34.69), -- La Mesa FD
     },
     ["vehicle"] = {
-        [1] = vector4(294.578, -574.761, 43.179, 35.79),
-        [2] = vector4(-234.28, 6329.16, 32.15, 222.5),
+        [1] = vector4(1660.04, 3666.2, 35.34, 295.97), -- Sandy
+        [2] = vector4(1658.0, 3669.78, 35.34, 301.24), -- Sandy
+        [3] = vector4(1655.9, 3673.16, 35.34, 301.32), -- Sandy
+        [4] = vector4(-274.61, 6330.72, 32.43, 273.07), -- Paleto
+        [5] = vector4(-277.37, 6327.32, 32.43, 274.3), -- Paleto
+        [6] = vector4(334.17, -573.6, 28.8, 338.51), -- Pillbox
+        [7] = vector4(326.95, -570.93, 28.8, 338.81), -- Pillbox
+        [8] = vector4(211.94, -1650.28, 29.8, 319.69), -- Davis
+        [9] = vector4(208.9, -1647.59, 29.8, 311.9), -- Davis
+        [10] = vector4(205.58, -1645.25, 29.8, 319.42), -- Davis
+        [11] = vector4(1204.9, -1468.44, 34.86, 0.81), -- LaMesa
+        [12] = vector4(1200.71, -1468.69, 34.86, 2.28), -- LaMesa
+        [13] = vector4(1196.74, -1468.68, 34.86, 355.45), -- LaMesa
+        [14] = vector4(-623.9, -106.48, 38.15, 80.34), -- Fire HQ
+        [15] = vector4(-622.68, -98.56, 38.15, 73.69), -- Fire HQ
+        [16] = vector4(-491.98, -336.8, 34.37, 173.0), -- Zonah
     },
     ["helicopter"] = {
-        [1] = vector4(351.58, -587.45, 74.16, 160.5),
-        [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
+        [1] = vector4(351.58, -587.45, 74.16, 160.5), -- Pillbox Rooftop
+        [2] = vector4(1637.98, 3653.51, 35.24, 54.25), -- Sandy
+        [3] = vector4(-659.84, -78.45, 48.34, 303.51), -- Fire HQ
+        [4] = vector4(-456.33, -291.36, 78.17, 50.43), -- Zonah
+        [5] = vector4(-447.37, -312.43, 78.17, 22.27), -- Zonah
     },
     ["armory"] = {
-        [1] = vector3(309.93, -602.94, 43.29),
-        [2] = vector3(-245.13, 6315.71, 32.82),
+        [1] = vector3(306.63, -601.76, 43.28), -- Pillbox
+        [2] = vector3(-623.88, -109.03, 45.5), -- Fire HQ
+        [3] = vector3(-255.07, 6326.67, 32.43), -- Paleto
+        [4] = vector3(1660.81, 3660.0, 35.34), -- Sandy
+        [5] = vector3(-457.15, -309.71, 34.91), -- Zonah
+        [6] = vector3(-382.16, 6112.53, 31.38), -- Paleto FD
+        [7] = vector3(1196.26, -1485.34, 34.69), -- La Mesa FD
     },
     ["roof"] = {
         [1] = vector4(338.5, -583.85, 74.16, 245.5),
@@ -63,21 +94,39 @@ Config.Locations = { -- Edit the various interaction points for players or creat
         [1] = vector3(298.74, -599.33, 43.29),
     },
     ["stash"] = {
-        [1] = vector3(309.78, -596.6, 43.29),
+        [1] = vector3(302.06, -599.31, 43.28), -- Pillbox
+        [2] = vector3(-629.2, -85.22, 45.41), -- FireHQ
+        [3] = vector3(-256.2, 6327.75, 32.43), -- Paleto
+        [4] = vector3(1660.36, 3657.36, 35.34), -- Sandy
+        [5] = vector3(-438.4, -319.02, 34.91), -- Zonah
+        [6] = vector3(-358.53, 6119.89, 38.44), -- Paleto FD
+        [7] = vector3(1211.08, -1487.88, 34.69), -- La Mesa FD
     },
     ["beds"] = {
-        [1] = {coords = vector4(353.1, -584.6, 43.11, 152.08), taken = false, model = 1631638868},
-        [2] = {coords = vector4(356.79, -585.86, 43.11, 152.08), taken = false, model = 1631638868},
-        [3] = {coords = vector4(354.12, -593.12, 43.1, 336.32), taken = false, model = 2117668672},
-        [4] = {coords = vector4(350.79, -591.8, 43.1, 336.32), taken = false, model = 2117668672},
-        [5] = {coords = vector4(346.99, -590.48, 43.1, 336.32), taken = false, model = 2117668672},
-        [6] = {coords = vector4(360.32, -587.19, 43.02, 152.08), taken = false, model = -1091386327},
-        [7] = {coords = vector4(349.82, -583.33, 43.02, 152.08), taken = false, model = -1091386327},
-        [8] = {coords = vector4(326.98, -576.17, 43.02, 152.08), taken = false, model = -1091386327},
-	--- paleto
-	    [9] = {coords = vector4(-252.43, 6312.25, 32.34, 313.48), taken = false, model = 2117668672},
-        [10] = {coords = vector4(-247.04, 6317.95, 32.34, 134.64), taken = false, model = 2117668672},
-        [11] = {coords = vector4(-255.98, 6315.67, 32.34, 313.91), taken = false, model = 2117668672},
+        --- Paleto
+        [1] = {coords = vector4(-252.24, 6323.19, 33.34, 135.86), taken = false, model = 2117668672},
+        [2] = {coords = vector4(-247.21, 6317.83, 33.34, 142.37), taken = false, model = 2117668672},
+        [3] = {coords = vector4(-245.49, 6316.15, 33.34, 136.79), taken = false, model = 2117668672},
+        [4] = {coords = vector4(-252.46, 6312.17, 33.34, 314.1), taken = false, model = 2117668672},
+        [5] = {coords = vector4(-254.14, 6313.98, 33.34, 317.26), taken = false, model = 2117668672},
+        -- Pillbox
+        [6] = {coords = vector4(319.28, -581.11, 44.2, 157.06), taken = false, model = 1631638868},
+        [7] = {coords = vector4(317.83, -585.19, 44.2, 346.18), taken = false, model = 1631638868},
+        [8] = {coords = vector4(314.6, -584.02, 44.2, 339.06), taken = false, model = 1631638868},
+        [9] = {coords = vector4(313.78, -579.14, 44.2, 161.44), taken = false, model = 1631638868},
+        [10] = {coords = vector4(311.19, -582.71, 44.2, 337.53), taken = false, model = 1631638868}, 
+        -- Sandy
+        [11] = {coords = vector4(1662.47, 3640.21, 36.34, 32.86), taken = false, model = 1004440924},
+        [12] = {coords = vector4(1666.97, 3642.4, 36.34, 29.6), taken = false, model = 1004440924},
+        [13] = {coords = vector4(1671.62, 3645.16, 36.34, 30.7), taken = false, model = 1004440924},
+        [14] = {coords = vector4(1675.84, 3647.52, 36.34, 31.91), taken = false, model = 1004440924},
+        -- Mount Zonah
+        [15] = {coords = vector4(-455.28, -278.22, 35.84, 203.25), taken = false, model = 2117668672},
+        [16] = {coords = vector4(-451.53, -285.03, 35.83, 25.93), taken = false, model = 2117668672},
+        [17] = {coords = vector4(-454.94, -286.29, 35.83, 31.75), taken = false, model = 2117668672},
+        [18] = {coords = vector4(-460.34, -288.48, 35.83, 29.23), taken = false, model = 2117668672},
+        [19] = {coords = vector4(-466.42, -282.91, 35.84, 201.77), taken = false, model = 2117668672},
+        [20] = {coords = vector4(-462.96, -281.33, 35.84, 197.74), taken = false, model = 2117668672},
     },
     ["jailbeds"] = {
         [1] = {coords = vector4(1761.96, 2597.74, 45.66, 270.14), taken = false, model = 2117668672},
@@ -86,32 +135,46 @@ Config.Locations = { -- Edit the various interaction points for players or creat
         [4] = {coords = vector4(1771.85, 2591.85, 45.66, 91.51), taken = false, model = 2117668672},
     },
     ["stations"] = {
-        [1] = {label = Lang:t('info.pb_hospital'), coords = vector4(304.27, -600.33, 43.28, 272.249)}
+        [1] = {label = Lang:t('info.pb_hospital'), coords = vector4(304.27, -600.33, 43.28, 272.249)}, -- Pillbox
+        [2] = {label = Lang:t('info.pb_hospital'), coords = vector4(1675.03, 3661.04, 35.34, 98.83)}, -- Sandy
+        [3] = {label = Lang:t('info.pa_hospital'), coords = vector4(-251.43, 6329.25, 32.43, 281.55)}, -- Paleto
+        [4] = {label = Lang:t('info.pa_hospital'), coords = vector4(-445.97, -341.17, 34.5, 248.65)}, -- Zonah
     }
 }
 
 Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulance job grade level
 	-- Grade 0
-	[0] = {
-		["ambulance"] = "Ambulance",
+	[0] = { --Probationary
+		--
 	},
 	-- Grade 1
-	[1] = {
-		["ambulance"] = "Ambulance",
-
+	[1] = { --Firefighter
+        ["stretcher"] = "Stretcher",
 	},
 	-- Grade 2
-	[2] = {
-		["ambulance"] = "Ambulance",
+	[2] = { --Engineer
+        ["stretcher"] = "Stretcher",
 	},
 	-- Grade 3
-	[3] = {
-		["ambulance"] = "Ambulance",
+	[3] = { --Lieutenant
+        ["stretcher"] = "Stretcher",
 	},
 	-- Grade 4
-	[4] = {
-		["ambulance"] = "Ambulance",
-	}
+	[4] = { --Captain
+        ["stretcher"] = "Stretcher",
+	},
+    -- Grade 5
+    [5] = { --Battalion Chief
+        ["stretcher"] = "Stretcher",
+    },
+    -- Grade 6
+    [6] = { --Assistant Chief
+        ["stretcher"] = "Stretcher",
+    },
+    -- Grade 7
+    [7] = { --Chief
+        ["stretcher"] = "Stretcher",
+    }
 }
 
 Config.Items = { -- Items found in the ambulance shop for players with the ambulance job to purchase
@@ -165,6 +228,46 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
             info = {},
             type = "item",
             slot = 6,
+        },
+        [7] = {
+            name = "advancedrepairkit",
+            price = 0,
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 7,
+        },
+        [8] = {
+            name = "ifaks",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 8,
+        },
+        [9] = {
+            name = "weapon_hatchet",
+            price = 0,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 9,
+        },
+        [10] = {
+            name = "harness",
+            price = 0,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 10,
+        },
+        [11] = {
+            name = "tunerlaptop",
+            price = 0,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 11,
         },
     }
 }
@@ -488,12 +591,145 @@ Config.Weapons = { -- Correspond weapon names to their class number
     [`WEAPON_EXHAUSTION`] = Config.WeaponClasses['SUFFOCATING'], -- Exhaust
     [`WEAPON_BZGAS`] = Config.WeaponClasses['SUFFOCATING'],
     [`WEAPON_SMOKEGRENADE`] = Config.WeaponClasses['SUFFOCATING'],
+
+    -- Custom Weapons
+    --[[ HIGH CALIBER ]]
+    [`WEAPON_DE`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M4`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_HK416`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AR15`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AK47`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M70`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_SCARH`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_MK14`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M110`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_HUNTINGRIFLE`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AKS74`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AK74`] = Config.WeaponClasses['HIGH_CALIBER'],
+    --[[ MEDIUM CALIBER ]]
+    [`WEAPON_UZI`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_MAC10`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_MP9`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_MP5`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    --[[ SMALL CALIBER ]]
+    [`WEAPON_GLOCK17`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_M9`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_M1911`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_FNX45`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_GLOCK22`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_GLOCK18C`] = Config.WeaponClasses['SMALL_CALIBER'],
+    --[[ SHOTGUN ]]
+    [`WEAPON_REMINGTON`] = Config.WeaponClasses['SHOTGUN'],
+    [`WEAPON_MOSSBERG`] = Config.WeaponClasses['SHOTGUN'],
+    --[[ CUTTING ]]
+    [`WEAPON_SHIV`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_KATANA`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_KARAMBIT`] = Config.WeaponClasses['CUTTING'],
+    --[[ HEAVY IMPACT ]]
+    [`WEAPON_SLEDGEHAMMER`] = Config.WeaponClasses['HEAVY_IMPACT'],
+    [`WEAPON_COLBATON`] = Config.WeaponClasses['HEAVY_IMPACT'],
 }
 
 Config.VehicleSettings = { -- Enable or disable vehicle extras when pulling them from the ambulance job vehicle spawner
-    ["car1"] = { -- Model name
+    ["fd2"] = { -- Model name
         ["extras"] = {
-            ["1"] = false, -- on/off
+            ["1"] = true, -- on/off
+            ["2"] = true,
+            ["3"] = false,
+            ["4"] = false,
+            ["5"] = true,
+            ["6"] = true,
+            ["7"] = true,
+            ["8"] = true,
+            ["9"] = true,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = true,
+        }
+    },
+    ["fordambo"] = {
+        ["extras"] = {
+            ["1"] = true,
+            ["2"] = true,
+            ["3"] = true,
+            ["4"] = false,
+            ["5"] = true,
+            ["6"] = true,
+            ["7"] = true,
+            ["8"] = true,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
+        }
+    },
+    ["arroweng"] = {
+        ["extras"] = {
+            ["1"] = false,
+            ["2"] = false,
+            ["3"] = false,
+            ["4"] = false,
+            ["5"] = false,
+            ["6"] = false,
+            ["7"] = false,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = true,
+            ["12"] = true,
+        }
+    },
+    ["fd1"] = {
+        ["extras"] = {
+            ["1"] = true,
+            ["2"] = true,
+            ["3"] = true,
+            ["4"] = true,
+            ["5"] = false,
+            ["6"] = true,
+            ["7"] = false,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
+        }
+    },
+    ["arrowladder"] = {
+        ["extras"] = {
+            ["1"] = false,
+            ["2"] = false,
+            ["3"] = false,
+            ["4"] = true,
+            ["5"] = true,
+            ["6"] = false,
+            ["7"] = false,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
+        }
+    },
+    ["fdatv"] = {
+        ["extras"] = {
+            ["1"] = true,
+            ["2"] = true,
+            ["3"] = false,
+            ["4"] = false,
+            ["5"] = false,
+            ["6"] = false,
+            ["7"] = false,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
+        }
+    },
+    ["FD8"] = {
+        ["extras"] = {
+            ["1"] = false,
             ["2"] = true,
             ["3"] = true,
             ["4"] = true,
@@ -507,7 +743,39 @@ Config.VehicleSettings = { -- Enable or disable vehicle extras when pulling them
             ["12"] = true,
         }
     },
-    ["car2"] = {
+    ["fd6"] = {
+        ["extras"] = {
+            ["1"] = true,
+            ["2"] = false,
+            ["3"] = true,
+            ["4"] = false,
+            ["5"] = false,
+            ["6"] = false,
+            ["7"] = false,
+            ["8"] = false,
+            ["9"] = true,
+            ["10"] = false,
+            ["11"] = true,
+            ["12"] = false,
+        }
+    },
+    ["fd13"] = {
+        ["extras"] = {
+            ["1"] = false,
+            ["2"] = true,
+            ["3"] = false,
+            ["4"] = false,
+            ["5"] = false,
+            ["6"] = false,
+            ["7"] = true,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
+        }
+    },
+    ["21firedurango"] = {
         ["extras"] = {
             ["1"] = false,
             ["2"] = true,
@@ -520,6 +788,54 @@ Config.VehicleSettings = { -- Enable or disable vehicle extras when pulling them
             ["9"] = true,
             ["10"] = true,
             ["11"] = true,
+            ["12"] = true,
+        }
+    },
+    ["fdfmo1"] = {
+        ["extras"] = {
+            ["1"] = false,
+            ["2"] = false,
+            ["3"] = false,
+            ["4"] = false,
+            ["5"] = false,
+            ["6"] = false,
+            ["7"] = false,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = false,
+            ["12"] = false,
+        }
+    },
+    ["arrowrescue"] = {
+        ["extras"] = {
+            ["1"] = false,
+            ["2"] = false,
+            ["3"] = false,
+            ["4"] = false,
+            ["5"] = false,
+            ["6"] = false,
+            ["7"] = false,
+            ["8"] = false,
+            ["9"] = false,
+            ["10"] = false,
+            ["11"] = true,
+            ["12"] = true,
+        }
+    },
+    ["20ramambo"] = {
+        ["extras"] = {
+            ["1"] = true,
+            ["2"] = true,
+            ["3"] = true,
+            ["4"] = false,
+            ["5"] = true,
+            ["6"] = true,
+            ["7"] = false,
+            ["8"] = true,
+            ["9"] = false,
+            ["10"] = true,
+            ["11"] = false,
             ["12"] = true,
         }
     }
