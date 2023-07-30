@@ -136,9 +136,9 @@ Config.Locations = { -- Edit the various interaction points for players or creat
     },
     ["stations"] = {
         [1] = {label = Lang:t('info.pb_hospital'), coords = vector4(304.27, -600.33, 43.28, 272.249)}, -- Pillbox
-        [2] = {label = Lang:t('info.pb_hospital'), coords = vector4(1675.03, 3661.04, 35.34, 98.83)}, -- Sandy
+        [2] = {label = Lang:t('info.ss_hospital'), coords = vector4(1675.03, 3661.04, 35.34, 98.83)}, -- Sandy
         [3] = {label = Lang:t('info.pa_hospital'), coords = vector4(-251.43, 6329.25, 32.43, 281.55)}, -- Paleto
-        [4] = {label = Lang:t('info.pa_hospital'), coords = vector4(-445.97, -341.17, 34.5, 248.65)}, -- Zonah
+        [4] = {label = Lang:t('info.mz_hospital'), coords = vector4(-445.97, -341.17, 34.5, 248.65)}, -- Zonah
     }
 }
 
