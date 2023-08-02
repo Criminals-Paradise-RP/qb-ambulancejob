@@ -103,30 +103,30 @@ Config.Locations = { -- Edit the various interaction points for players or creat
         [7] = vector3(1211.08, -1487.88, 34.69), -- La Mesa FD
     },
     ["beds"] = {
-        --- Paleto
-        [1] = {coords = vector4(-252.24, 6323.19, 33.34, 135.86), taken = false, model = 2117668672},
-        [2] = {coords = vector4(-247.21, 6317.83, 33.34, 142.37), taken = false, model = 2117668672},
-        [3] = {coords = vector4(-245.49, 6316.15, 33.34, 136.79), taken = false, model = 2117668672},
-        [4] = {coords = vector4(-252.46, 6312.17, 33.34, 314.1), taken = false, model = 2117668672},
-        [5] = {coords = vector4(-254.14, 6313.98, 33.34, 317.26), taken = false, model = 2117668672},
-        -- Pillbox
-        [6] = {coords = vector4(319.28, -581.11, 44.2, 157.06), taken = false, model = 1631638868},
-        [7] = {coords = vector4(317.83, -585.19, 44.2, 346.18), taken = false, model = 1631638868},
-        [8] = {coords = vector4(314.6, -584.02, 44.2, 339.06), taken = false, model = 1631638868},
-        [9] = {coords = vector4(313.78, -579.14, 44.2, 161.44), taken = false, model = 1631638868},
-        [10] = {coords = vector4(311.19, -582.71, 44.2, 337.53), taken = false, model = 1631638868}, 
-        -- Sandy
-        [11] = {coords = vector4(1662.47, 3640.21, 36.34, 32.86), taken = false, model = 1004440924},
-        [12] = {coords = vector4(1666.97, 3642.4, 36.34, 29.6), taken = false, model = 1004440924},
-        [13] = {coords = vector4(1671.62, 3645.16, 36.34, 30.7), taken = false, model = 1004440924},
-        [14] = {coords = vector4(1675.84, 3647.52, 36.34, 31.91), taken = false, model = 1004440924},
         -- Mount Zonah
-        [15] = {coords = vector4(-455.28, -278.22, 35.84, 203.25), taken = false, model = 2117668672},
-        [16] = {coords = vector4(-451.53, -285.03, 35.83, 25.93), taken = false, model = 2117668672},
-        [17] = {coords = vector4(-454.94, -286.29, 35.83, 31.75), taken = false, model = 2117668672},
-        [18] = {coords = vector4(-460.34, -288.48, 35.83, 29.23), taken = false, model = 2117668672},
-        [19] = {coords = vector4(-466.42, -282.91, 35.84, 201.77), taken = false, model = 2117668672},
-        [20] = {coords = vector4(-462.96, -281.33, 35.84, 197.74), taken = false, model = 2117668672},
+        [1] = {coords = vector4(-455.28, -278.22, 35.84, 203.25), taken = false, model = 2117668672},
+        [2] = {coords = vector4(-451.53, -285.03, 35.83, 25.93), taken = false, model = 2117668672},
+        [3] = {coords = vector4(-454.94, -286.29, 35.83, 31.75), taken = false, model = 2117668672},
+        [4] = {coords = vector4(-460.34, -288.48, 35.83, 29.23), taken = false, model = 2117668672},
+        [5] = {coords = vector4(-466.42, -282.91, 35.84, 201.77), taken = false, model = 2117668672},
+        [6] = {coords = vector4(-462.96, -281.33, 35.84, 197.74), taken = false, model = 2117668672},
+        -- Pillbox
+        [7] = {coords = vector4(319.28, -581.11, 44.2, 157.06), taken = false, model = 1631638868},
+        [8] = {coords = vector4(317.83, -585.19, 44.2, 346.18), taken = false, model = 1631638868},
+        [9] = {coords = vector4(314.6, -584.02, 44.2, 339.06), taken = false, model = 1631638868},
+        [10] = {coords = vector4(313.78, -579.14, 44.2, 161.44), taken = false, model = 1631638868},
+        [111] = {coords = vector4(311.19, -582.71, 44.2, 337.53), taken = false, model = 1631638868}, 
+        -- Sandy
+        [12] = {coords = vector4(1662.47, 3640.21, 36.34, 32.86), taken = false, model = 1004440924},
+        [13] = {coords = vector4(1666.97, 3642.4, 36.34, 29.6), taken = false, model = 1004440924},
+        [14] = {coords = vector4(1671.62, 3645.16, 36.34, 30.7), taken = false, model = 1004440924},
+        [15] = {coords = vector4(1675.84, 3647.52, 36.34, 31.91), taken = false, model = 1004440924},
+        --- Paleto
+        [16] = {coords = vector4(-252.24, 6323.19, 33.34, 135.86), taken = false, model = 2117668672},
+        [17] = {coords = vector4(-247.21, 6317.83, 33.34, 142.37), taken = false, model = 2117668672},
+        [18] = {coords = vector4(-245.49, 6316.15, 33.34, 136.79), taken = false, model = 2117668672},
+        [19] = {coords = vector4(-252.46, 6312.17, 33.34, 314.1), taken = false, model = 2117668672},
+        [20] = {coords = vector4(-254.14, 6313.98, 33.34, 317.26), taken = false, model = 2117668672},
     },
     ["jailbeds"] = {
         [1] = {coords = vector4(1761.96, 2597.74, 45.66, 270.14), taken = false, model = 2117668672},
