@@ -593,6 +593,7 @@ Config.Weapons = { -- Correspond weapon names to their class number
     [`WEAPON_SMOKEGRENADE`] = Config.WeaponClasses['SUFFOCATING'],
 
     -- Custom Weapons
+    [`WEAPON_BEANGBAGSHOTGUN`] = Config.WeaponClasses['NONE'],
     --[[ HIGH CALIBER ]]
     [`WEAPON_DE`] = Config.WeaponClasses['HIGH_CALIBER'],
     [`WEAPON_M4`] = Config.WeaponClasses['HIGH_CALIBER'],
