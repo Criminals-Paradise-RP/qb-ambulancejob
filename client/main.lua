@@ -575,6 +575,7 @@ RegisterNetEvent('hospital:client:ambulanceAlert', function(coords, text)
 end)
 
 RegisterNetEvent('hospital:client:Revive', function()
+    exports['pma-voice']:resetProximityCheck()
     local player = PlayerPedId()
 
     if isDead or InLaststand then
