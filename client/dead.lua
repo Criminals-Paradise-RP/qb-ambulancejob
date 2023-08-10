@@ -144,6 +144,9 @@ CreateThread(function()
             EnableControlAction(0, 47, true)
 
             if isDead then
+                exports['pma-voice']:overrideProximityCheck(function(player) -- This disables the player from "targeting" anyone when talking
+                    return false
+                end)
                 if not isInHospitalBed then
                     if deathTime > 0 then
                         DrawTxt(0.93, 1.44, 1.0,1.0,0.6, Lang:t('info.respawn_txt', {deathtime = math.ceil(deathTime)}), 255, 255, 255, 255)
