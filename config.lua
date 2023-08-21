@@ -183,7 +183,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
     items = {
         [1] = {
             name = "radio",
-            price = 0,
+            price = 250,
             amount = 50,
             info = {},
             type = "item",
@@ -191,7 +191,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
         },
         [2] = {
             name = "bandage",
-            price = 0,
+            price = 100,
             amount = 50,
             info = {},
             type = "item",
@@ -199,7 +199,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
         },
         [3] = {
             name = "painkillers",
-            price = 0,
+            price = 100,
             amount = 50,
             info = {},
             type = "item",
@@ -207,7 +207,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
         },
         [4] = {
             name = "firstaid",
-            price = 0,
+            price = 150,
             amount = 50,
             info = {},
             type = "item",
@@ -215,7 +215,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
         },
         [5] = {
             name = "weapon_flashlight",
-            price = 0,
+            price = 150,
             amount = 50,
             info = {},
             type = "item",
@@ -223,7 +223,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
         },
         [6] = {
             name = "weapon_fireextinguisher",
-            price = 0,
+            price = 150,
             amount = 50,
             info = {},
             type = "item",
@@ -231,7 +231,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
         },
         [7] = {
             name = "advancedrepairkit",
-            price = 0,
+            price = 100,
             amount = 10,
             info = {},
             type = "item",
@@ -239,7 +239,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
         },
         [8] = {
             name = "ifaks",
-            price = 0,
+            price = 200,
             amount = 50,
             info = {},
             type = "item",
@@ -247,7 +247,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
         },
         [9] = {
             name = "weapon_hatchet",
-            price = 0,
+            price = 100,
             amount = 1,
             info = {},
             type = "item",
@@ -255,7 +255,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
         },
         [10] = {
             name = "harness",
-            price = 0,
+            price = 50,
             amount = 1,
             info = {},
             type = "item",
@@ -263,7 +263,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
         },
         [11] = {
             name = "tunerlaptop",
-            price = 0,
+            price = 200,
             amount = 1,
             info = {},
             type = "item",
