@@ -51,7 +51,8 @@ function OnDeath()
                 loadAnimDict(deadAnimDict)
                 TaskPlayAnim(player, deadAnimDict, deadAnim, 1.0, 1.0, -1, 1, 0, 0, 0, 0)
             end
-            TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.civ_died'))
+            -- TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.civ_died'))
+            exports['ps-dispatch']:DeceasedPerson()
         end
     end
 end
@@ -189,7 +190,9 @@ CreateThread(function()
                     end
 
                     if IsControlJustPressed(0, 47) and not emsNotified then
-                        TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.civ_down'))
+                        -- TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.civ_down'))
+                        exports['ps-dispatch']:InjuriedPerson()
+                        exports['envi-medic']:SendHelp()
                         emsNotified = true
                     end
                 end
@@ -201,6 +204,7 @@ CreateThread(function()
                             TaskPlayAnim(ped, 'veh@low@front_ps@idle_duck', 'sit', 1.0, 1.0, -1, 1, 0, 0, 0, 0)
                         end
                     else
+                        DeadMovement()
                         loadAnimDict(lastStandDict)
                         if not IsEntityPlayingAnim(ped, lastStandDict, lastStandAnim, 3) then
                             TaskPlayAnim(ped, lastStandDict, lastStandAnim, 1.0, 1.0, -1, 1, 0, 0, 0, 0)
@@ -223,4 +227,26 @@ CreateThread(function()
         end
         Wait(sleep)
     end
+end)
+
+function DeadMovement()
+    local ped = PlayerPedId()
+    loadAnimDict("move_injured_ground")
+    if IsDisabledControlPressed(0, 34) then
+        SetEntityHeading(ped, GetEntityHeading(ped)+0.25 )
+    elseif IsDisabledControlPressed(0, 35) then
+        SetEntityHeading(ped, GetEntityHeading(ped)-0.25 )
+    end
+    
+    if IsDisabledControlJustPressed(0, 32) then
+        Wait(1000)
+        ClearPedTasks(ped)
+        TaskPlayAnimAdvanced(ped, "move_injured_ground", "front_loop", GetEntityCoords(ped), 1.0, 0.0, GetEntityHeading(ped), 1.0, 1.0, 1.0, 47, 1.0, 0, 0)
+    elseif IsDisabledControlJustReleased(0, 32) then 
+        TaskPlayAnimAdvanced(ped, "move_injured_ground", "front_loop", GetEntityCoords(ped), 1.0, 0.0, GetEntityHeading(ped), 1.0, 1.0, 1.0, 46, 1.0, 0, 0)
+    end
+end
+
+exports('LastStand', function()
+    return InLaststand
 end)
