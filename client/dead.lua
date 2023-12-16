@@ -228,25 +228,3 @@ CreateThread(function()
         Wait(sleep)
     end
 end)
-
-function DeadMovement()
-    local ped = PlayerPedId()
-    loadAnimDict("move_injured_ground")
-    if IsDisabledControlPressed(0, 34) then
-        SetEntityHeading(ped, GetEntityHeading(ped)+0.25 )
-    elseif IsDisabledControlPressed(0, 35) then
-        SetEntityHeading(ped, GetEntityHeading(ped)-0.25 )
-    end
-    
-    if IsDisabledControlJustPressed(0, 32) then
-        Wait(1000)
-        ClearPedTasks(ped)
-        TaskPlayAnimAdvanced(ped, "move_injured_ground", "front_loop", GetEntityCoords(ped), 1.0, 0.0, GetEntityHeading(ped), 1.0, 1.0, 1.0, 47, 1.0, 0, 0)
-    elseif IsDisabledControlJustReleased(0, 32) then 
-        TaskPlayAnimAdvanced(ped, "move_injured_ground", "front_loop", GetEntityCoords(ped), 1.0, 0.0, GetEntityHeading(ped), 1.0, 1.0, 1.0, 46, 1.0, 0, 0)
-    end
-end
-
-exports('LastStand', function()
-    return InLaststand
-end)
