@@ -204,7 +204,6 @@ CreateThread(function()
                             TaskPlayAnim(ped, 'veh@low@front_ps@idle_duck', 'sit', 1.0, 1.0, -1, 1, 0, 0, 0, 0)
                         end
                     else
-                        DeadMovement()
                         loadAnimDict(lastStandDict)
                         if not IsEntityPlayingAnim(ped, lastStandDict, lastStandAnim, 3) then
                             TaskPlayAnim(ped, lastStandDict, lastStandAnim, 1.0, 1.0, -1, 1, 0, 0, 0, 0)
