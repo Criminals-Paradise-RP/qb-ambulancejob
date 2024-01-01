@@ -28,20 +28,22 @@ end)
 -- 	TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
 -- end)
 
-RegisterNetEvent('hospital:server:SendToBed', function(bedId, isRevive) -- m-insurance
+RegisterNetEvent('hospital:server:SendToBed', function(bedId, isRevive)
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
-	local citizenid = Player.PlayerData.citizenid -- Added this
-	TriggerClientEvent('hospital:client:SendToBed', src, bedId, Config.Locations['beds'][bedId], isRevive)
+	local citizenid = Player.PlayerData.citizenid 
+
+	TriggerClientEvent('hospital:client:SendToBed', src, bedId, Config.Locations["beds"][bedId], isRevive)
 	TriggerClientEvent('hospital:client:SetBed', -1, bedId, true)
-	if exports['m-Insurance']:haveHealthInsurance(citizenid) then -- Added this
-		Player.Functions.RemoveMoney("bank", Config.BillCost - 500, "respawned-at-hospital") -- You can change the 500 for the discount do you want
-		exports['qb-banking']:AddMoney("ambulance", Config.BillCost - 500, 'Player treatment')
+
+	if exports['m-Insurance']:haveHealthInsurance(citizenid) then 
+		Player.Functions.RemoveMoney("bank", Config.BillCost - 500, "respawned-at-hospital") -- The "500" is the discount, you can change it
+		exports['qb-management']:AddMoney("ambulance", Config.BillCost - 500) -- The "500" is the discount, you can change it
 	else
 		Player.Functions.RemoveMoney("bank", Config.BillCost , "respawned-at-hospital")
-		exports['qb-banking']:AddMoney("ambulance", Config.BillCost, 'Player treatment')
+		exports['qb-management']:AddMoney("ambulance", Config.BillCost)
 	end
-		TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
+	TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
 end)
 
 RegisterNetEvent('hospital:server:RespawnAtHospital', function()
