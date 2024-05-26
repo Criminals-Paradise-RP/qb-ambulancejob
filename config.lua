@@ -37,38 +37,38 @@ Config.AlertShowInfo = 2            -- How many injuries a player must have befo
 
 Config.Locations = {                -- Edit the various interaction points for players or create new ones
     ['checking'] = {
-        [1] = vector3(-436.16, -325.81, 34.91), -- Zonah
-        [2] = vector3(1674.81, 3666.17, 35.34), -- Sandy
-        [3] = vector3(1672.41, 3652.76, 35.34), -- Sandy
+        vector3(-436.16, -325.81, 34.91), -- Zonah
+        vector3(1674.81, 3666.17, 35.34), -- Sandy
+        vector3(1672.41, 3652.76, 35.34), -- Sandy
     },
     ['duty'] = {
-        [1] = vector3(1670.83, 3655.24, 35.34), -- Sandy
-        [2] = vector3(-432.23, -318.81, 34.91), -- Zonah
+        vector3(1670.83, 3655.24, 35.34), -- Sandy
+        vector3(-432.23, -318.81, 34.91), -- Zonah
     },
     ['vehicle'] = {
-        [1] = vector4(-491.98, -336.8, 34.37, 173.0), -- Zonah
-        [2] = vector4(1660.04, 3666.2, 35.34, 295.97), -- Sandy
-        [3] = vector4(1658.0, 3669.78, 35.34, 301.24), -- Sandy
-        [4] = vector4(1655.9, 3673.16, 35.34, 301.32), -- Sandy
+        vector4(-491.98, -336.8, 34.37, 173.0), -- Zonah
+        vector4(1660.04, 3666.2, 35.34, 295.97), -- Sandy
+        vector4(1658.0, 3669.78, 35.34, 301.24), -- Sandy
+        vector4(1655.9, 3673.16, 35.34, 301.32), -- Sandy
     },
     ['helicopter'] = {
-        [1] = vector4(-456.33, -291.36, 78.17, 50.43), -- Zonah
-        [2] = vector4(-447.37, -312.43, 78.17, 22.27), -- Zonah
-        [3] = vector4(1637.98, 3653.51, 35.24, 54.25), -- Sandy
+        vector4(-456.33, -291.36, 78.17, 50.43), -- Zonah
+        vector4(-447.37, -312.43, 78.17, 22.27), -- Zonah
+        vector4(1637.98, 3653.51, 35.24, 54.25), -- Sandy
     },
-    ['armory'] = {
-        [1] = vector3(1660.81, 3660.0, 35.34), -- Sandy
-        [2] = vector3(-457.15, -309.71, 34.91), -- Zonah
-    },
+    -- ['armory'] = {
+    --     vector3(1660.81, 3660.0, 35.34), -- Sandy
+    --     vector3(-457.15, -309.71, 34.91), -- Zonah
+    -- },
     ['roof'] = {
-        [1] = vector4(338.5, -583.85, 74.16, 245.5),
+        vector4(338.5, -583.85, 74.16, 245.5),
     },
     ['main'] = {
-        [1] = vector3(298.74, -599.33, 43.29),
+        vector3(298.74, -599.33, 43.29),
     },
     ['stash'] = {
-        [1] = vector3(1660.36, 3657.36, 35.34), -- Sandy
-        [2] = vector3(-438.4, -319.02, 34.91), -- Zonah
+        vector3(1660.36, 3657.36, 35.34), -- Sandy
+        vector3(-438.4, -319.02, 34.91), -- Zonah
     },
     ['beds'] = {
         -- Mount Zonah
@@ -90,6 +90,31 @@ Config.Locations = {                -- Edit the various interaction points for p
         { coords = vector4(1771.8, 2598.02, 45.66, 89.05),   taken = false, model = 2117668672 },
         { coords = vector4(1771.85, 2591.85, 45.66, 91.51),  taken = false, model = 2117668672 },
     },
+    ['hospital'] = {
+        {
+            ['name'] = Lang:t('info.pb_hospital'),
+            ['location'] = vector3(308.36, -595.25, 43.28),
+            ['beds'] = {
+                { coords = vector4(353.1, -584.6, 43.11, 152.08),   taken = false, model = 1631638868 },
+                { coords = vector4(356.79, -585.86, 43.11, 152.08), taken = false, model = 1631638868 },
+                { coords = vector4(354.12, -593.12, 43.1, 336.32),  taken = false, model = 2117668672 },
+                { coords = vector4(350.79, -591.8, 43.1, 336.32),   taken = false, model = 2117668672 },
+                { coords = vector4(346.99, -590.48, 43.1, 336.32),  taken = false, model = 2117668672 },
+                { coords = vector4(360.32, -587.19, 43.02, 152.08), taken = false, model = -1091386327 },
+                { coords = vector4(349.82, -583.33, 43.02, 152.08), taken = false, model = -1091386327 },
+                { coords = vector4(326.98, -576.17, 43.02, 152.08), taken = false, model = -1091386327 },
+            },
+        },
+        {
+            ['name'] = Lang:t('info.paleto_hospital'),
+            ['location'] = vector3(-254.54, 6331.78, 32.43),
+            ['beds'] = {
+                { coords = vector4(-252.43, 6312.25, 32.34, 313.48), taken = false, model = 2117668672 },
+                { coords = vector4(-247.04, 6317.95, 32.34, 134.64), taken = false, model = 2117668672 },
+                { coords = vector4(-255.98, 6315.67, 32.34, 313.91), taken = false, model = 2117668672 },
+            },
+        },
+    },
     ['stations'] = {
         {label = Lang:t('info.mz_hospital'), coords = vector3(-445.97, -341.17, 34.5) }, -- Zonah
         {label = Lang:t('info.ss_hospital'), coords = vector3(1675.03, 3661.04, 35.34) }, -- Sandy
@@ -99,17 +124,6 @@ Config.Locations = {                -- Edit the various interaction points for p
 Config.AuthorizedVehicles = { -- Grade is key, don't add same vehicle in multiple grades. Higher rank can see lower
     [0] = {
         ['ambulance'] = 'Ambulance'
-    }
-}
-
-Config.Items = { -- Grade is key, don't add same item in multiple grades. Higher rank can see lower
-    [0] = {
-        { name = 'radio',                   price = 0, amount = 50, info = {}, type = 'item' },
-        { name = 'bandage',                 price = 0, amount = 50, info = {}, type = 'item' },
-        { name = 'painkillers',             price = 0, amount = 50, info = {}, type = 'item' },
-        { name = 'firstaid',                price = 0, amount = 50, info = {}, type = 'item' },
-        { name = 'weapon_flashlight',       price = 0, amount = 50, info = {}, type = 'item' },
-        { name = 'weapon_fireextinguisher', price = 0, amount = 50, info = {}, type = 'item' },
     }
 }
 
@@ -181,10 +195,10 @@ Config.WoundStates = { -- Translate wound alerts
 }
 
 Config.BleedingStates = { -- Translate bleeding alerts
-    [1] = { label = Lang:t('states.little_bleed') },
-    [2] = { label = Lang:t('states.bleed') },
-    [3] = { label = Lang:t('states.lot_bleed') },
-    [4] = { label = Lang:t('states.big_bleed') },
+    { label = Lang:t('states.little_bleed') },
+    { label = Lang:t('states.bleed') },
+    { label = Lang:t('states.lot_bleed') },
+    { label = Lang:t('states.big_bleed') },
 }
 
 Config.MovementRate = { -- Set the player movement rate based on the level of damage they have
